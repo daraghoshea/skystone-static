@@ -2,8 +2,18 @@ backend:
   name: git-gateway
   branch: master
   squash_merges: true
+
+local_backend: true
+
 publish_mode: editorial_workflow
 media_folder: images # required but unused, host images externally
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: skystone
+    api_key: 593158426644373
+
 collections:
   - name: "posts"
     label: "Posts"
