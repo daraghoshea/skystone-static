@@ -2,10 +2,10 @@
 
 return [
     'production' => false,
-    'baseUrl' => 'https://artisan-static-demo.netlify.com',
+    'baseUrl' => 'https://skystone-static.netlify.com',
     'site' => [
-        'title' => 'My Jigsaw Blog',
-        'description' => 'Personal blog of John Doe.',
+        'title' => 'Skystone Group',
+        'description' => "Your Volumetric Modular Construction partner.",
         'image' => 'default-share.png',
     ],
     'owner' => [
@@ -16,7 +16,7 @@ return [
     'services' => [
         'analytics' => 'UA-XXXXX-Y',
         'disqus' => 'artisanstatic',
-        'cloudinary' => 'artisanstatic',
+        'cloudinary' => 'skystone',
         'jumprock' => 'artisanstatic',
     ],
     'collections' => [
