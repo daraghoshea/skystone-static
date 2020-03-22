@@ -15,6 +15,16 @@ media_library:
     api_key: 593158426644373
 
 collections:
+  - label: "Projects"
+    name: "projects"
+    folder: "source/_projects"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Status", name: "status", widget: "string" }
+      - {label: "Sector", name: "sector", collapsed: false, widget: "list" }
+      - {label: "Main Image", name: "image", widget: "image", allow_multiple: false, media_library: { config: { multiple: false } } }
+      - {label: "Content", name: "body", widget: "markdown"}
   - name: "posts"
     label: "Posts"
     label_singular: "Post"
