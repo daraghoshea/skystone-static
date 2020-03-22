@@ -9,16 +9,22 @@
         "watch": "npm run local -- --watch"
     },
     "devDependencies": {
+        "alpinejs": "^2.2.1",
         "browser-sync": "^2.23.6",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^3.2.3",
         "hasbin": "^1.2.3",
-        "highlight.js": "^9.12.0",
         "laravel-mix": "^2.0.0",
+        "laravel-mix-purgecss": "^4.2.0",
+        "lodash": "^4.17.15",
         "node-cmd": "^3.0.0",
         "on-build-webpack": "^0.1.0",
-        "sharer.js": "^0.3.3",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^1.2.0",
+        "vue": "^2.6.11",
+        "vue-clickaway": "^2.2.2",
         "webpack-watch": "^0.2.0",
         "yargs": "^4.6.0"
-    }
+    },
+    "dependencies": {}
 }

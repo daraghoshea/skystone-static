@@ -13,6 +13,14 @@ return [
         'twitter' => 'johndoe',
         'github' => 'johndoe',
     ],
+    'nav' => [
+        ['url' => '/about', 'text' => 'About'],
+        ['url' => '#', 'text' => 'Contact'],
+        ['url' => '#', 'text' => 'Products'],
+        ['url' => '#', 'text' => 'Factories'],
+        ['url' => '#', 'text' => 'Developers'],
+        ['url' => '#', 'text' => 'Architects & Engineers'],
+    ],
     'services' => [
         'analytics' => 'UA-XXXXX-Y',
         'disqus' => 'artisanstatic',
@@ -43,7 +51,10 @@ return [
             ? str_limit_soft(content_sanitize($page->getContent()), $limit, $end)
             : null;
     },
-    'imageCdn' => function ($page, $path) {
+    'media' => function ($page, $path) {
         return "https://res.cloudinary.com/{$page->services->cloudinary}/{$path}";
     },
+    'cloudinaryTransform' => function($page, $url, $transformation) {
+        return str_replace_first('image/upload', "image/upload/{$transformation}", $url);
+    }
 ];

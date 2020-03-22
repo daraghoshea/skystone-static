@@ -1,0 +1,98 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+:root {
+    --ssg-red: hsla(1,81%,59%,100);
+    --ssg-red-light: hsla(1,81%,69%,100);
+    --ssg-red-dark: hsla(1,81%,49%,100);
+    --ssg-black: hsla(193,100%,5%,100);
+    --ssg-black-muted: hsla(193,100%,12%,100);
+    --ssg-black-90: hsla(193,100%,5%,90);
+    --ssg-black-80: hsla(193,100%,5%,80);
+    --ssg-black-70: hsla(193,100%,5%,70);
+    --ssg-black-60: hsla(193,100%,5%,60);
+    --ssg-black-50: hsla(193,100%,5%,50);
+    --mac-yellow: hsla(56,100%,50%,100);
+    --mac-yellow-light: hsla(56,100%,46%,100);
+    --mac-yellow-dark: hsla(56,100%,40%,100);
+}
+
+
+.full-screen-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: 1s opacity;
+}
+
+/** LOGO **/
+.ssg-logo--bg-white .ssg-logo__text path { fill: var(--ssg-black); }
+.ssg-logo--bg-white .ssg-logo__icon path { fill: var(--ssg-red); }
+
+.ssg-logo--bg-black .ssg-logo__text path { fill: white; }
+.ssg-logo--bg-black .ssg-logo__icon path { fill: var(--ssg-red); }
+
+.ssg-logo--bg-red .ssg-logo__text path { fill: white; }
+.ssg-logo--bg-red .ssg-logo__icon path { fill: white; }
+
+/** vue hide unmouonted components **/
+[v-cloak] { display: none; }
+
+/** Effects **/
+.text-underline:after {
+    background-color: #EB4542;
+    background-color: var(--ssg-red);
+    content: "";
+    display: block;
+    height: 3px;
+    margin-top: 10px;
+    width: 50px;
+}
+
+
+/** COMPONENTS **/
+.btn {
+    @apply px-4 py-2 inline-flex items-center rounded-sm outline-none text-sm font-sans uppercase;
+}
+.btn:hover, .btn:focus {
+    @apply outline-none;
+}
+
+.btn--red {
+    @apply bg-ssg-red text-white;
+}
+.btn--red:hover, .btn--red:focus {
+    @apply bg-ssg-red-dark bg-ssg-red-dark;
+}
+
+.btn--red-outline {
+    @apply bg-white text-ssg-red border-2 border-ssg-red;
+}
+.btn--red-outline:hover, .btn--red-outline:focus {
+    @apply bg-ssg-red-dark text-white;
+}
+
+/** ANIMATIONS **/
+.anim-hover--forward {
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.anim-hover--forward:hover {
+    transform: translateX(8px);
+}
+
+.anim-hover--fade {
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: color, background-color;
+}
