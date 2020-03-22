@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     'production' => false,
     'baseUrl' => 'https://skystone-static.netlify.com',
@@ -15,8 +17,8 @@ return [
     ],
     'nav' => [
         ['url' => '/about', 'text' => 'About'],
-        ['url' => '#', 'text' => 'Contact'],
-        ['url' => '#', 'text' => 'Products'],
+        ['url' => '#contact-us', 'text' => 'Contact'],
+        ['url' => '/product', 'text' => 'Products'],
         ['url' => '#', 'text' => 'Factories'],
         ['url' => '#', 'text' => 'Developers'],
         ['url' => '#', 'text' => 'Architects & Engineers'],
@@ -28,23 +30,19 @@ return [
         'jumprock' => 'artisanstatic',
     ],
     'collections' => [
+        'projects' => [
+            'path' => 'projects/{filename}',
+            'extends' => '_layouts.project',
+            'section' => 'description'
+        ],
         'posts' => [
             'path' => 'posts/{filename}',
             'sort' => '-date',
             'extends' => '_layouts.post',
             'section' => 'postContent',
             'isPost' => true,
-            'comments' => true,
-            'tags' => [],
-        ],
-        'tags' => [
-            'path' => 'tags/{filename}',
-            'extends' => '_layouts.tag',
-            'section' => '',
-            'name' => function ($page) {
-                return $page->getFilename();
-            },
-        ],
+            'comments' => true
+        ]
     ],
     'excerpt' => function ($page, $limit = 250, $end = '...') {
         return $page->isPost
@@ -52,9 +50,18 @@ return [
             : null;
     },
     'media' => function ($page, $path) {
+        if( substr($path,0,4) === 'http' ) {
+            return $path;
+        }
         return "https://res.cloudinary.com/{$page->services->cloudinary}/{$path}";
     },
     'cloudinaryTransform' => function($page, $url, $transformation) {
+        if( stripos($url, 'cloudinary') === false ) {
+            return $url;
+        }
         return str_replace_first('image/upload', "image/upload/{$transformation}", $url);
-    }
+    },
+    'isActiveRoute' => function ($page, $section) {
+        return Str::contains($page->getPath(), $section) ? 'selected' : '';
+    },
 ];

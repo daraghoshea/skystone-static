@@ -23,8 +23,8 @@
         </header>
     </full-screen-media>
 
-    <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12 grid gap-12 md:grid-cols-2">
-        <div>
+    <section class="bg-white py-24 md:py-48 px-6 sm:px-8 lg:px-12 grid gap-12 md:grid-cols-2">
+        <div class="md:px-8">
             @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584806025/skystone-marriott-module-prototype-1_er7ps9.jpg', 'alt' => 'Skystone Marriott AC finished prototype module'])
         </div>
         <div class="max-w-xl mx-auto">
@@ -40,7 +40,7 @@
     </section>
 
     <section class="bg-ssg-black py-24 md:py-32 px-6 flex items-center justify-center text-white">
-        <div class="max-w-xl mx-auto">
+        <div class="max-w-3xl mx-auto">
             <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Offices & Factories</p>
             <h2 class="text-3xl text-white mb-2 text-underline">Skystone Locations</h2>
 
@@ -90,9 +90,51 @@
     </section>
 
     <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
-        <div class="max-w-xl mx-auto">
-            <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Hospitality & Residential Experts</p>
-            <h2 class="text-2xl text-underline mb-4">Skystone Projects</h2>
+
+        <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Hospitality & Residential Experts</p>
+        <h2 class="text-2xl text-underline mb-4">Skystone Projects</h2>
+
+        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @forelse ($projects as $project)
+                <div>
+                    <a href="{{$project->getPath()}}" class="block relative">
+                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
+                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
+                    </a>
+                    <h3 class="my-3 text-lg font-bold">
+                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
+                    </h3>
+                    <p class="">
+                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
+                    </p>
+                </div>
+                <div>
+                    <a href="{{$project->getPath()}}" class="block relative">
+                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
+                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
+                    </a>
+                    <h3 class="my-3 text-lg font-bold">
+                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
+                    </h3>
+                    <p class="">
+                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
+                    </p>
+                </div>
+                <div>
+                    <a href="{{$project->getPath()}}" class="block relative">
+                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
+                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
+                    </a>
+                    <h3 class="my-3 text-lg font-bold">
+                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
+                    </h3>
+                    <p class="">
+                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
+                    </p>
+                </div>
+            @empty
+                <p class="text-gray-300">No projects added yet.</p>
+            @endforelse
         </div>
     </section>
 

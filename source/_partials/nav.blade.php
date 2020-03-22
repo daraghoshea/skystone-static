@@ -18,7 +18,10 @@
                 </div>
                 <div class="hidden" :class="[`${breakPoint}:block ${breakPoint}:ml-auto ${breakPoint}:pr-4`]">
                     @foreach($page->nav as $nav)
-                        <a href="{{$nav['url']}}" class="ml-8 py-2 border-b-2 border-transparent font-medium text-white hover:border-ssg-red focus:outline-none focus:border-ssg-red transition duration-150 ease-in-out">{{$nav['text']}}</a>
+                        <a href="{{$nav['url']}}"
+                           class="{{$page->isActiveRoute($nav['url']) ? 'border-ssg-red' : ''}} ml-8 py-2 border-b-2 border-transparent font-medium text-white hover:border-ssg-red focus:outline-none focus:border-ssg-red transition duration-150 ease-in-out">
+                            {{$nav['text']}}
+                        </a>
                     @endforeach
                 </div>
             </nav>
