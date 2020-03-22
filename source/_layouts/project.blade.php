@@ -2,6 +2,12 @@
 
 @section('title', $page->title)
 
+@php
+$otherProjects = $projects->reject(function($project) use ($page) {
+    return $project->getPath() === $page->getPath();
+})
+@endphp
+
 @section('content')
     <full-screen-media :ratio="16/9">
         <header slot-scope="{style, scroll}" class="bg-ssg-black flex h-screen items-center justify-center overflow-hidden relative w-full">
@@ -52,7 +58,30 @@
                 </div>
             </div>
         </div>
-
     </section>
+
+    @if( ! $otherProjects->isEmpty() )
+    <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
+        <h2 class="text-2xl text-underline mb-4">Other Projects</h2>
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach ($otherProjects as $project)
+                <div>
+                    <a href="{{$project->getPath()}}" class="block relative">
+                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
+                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
+                    </a>
+                    <h3 class="my-3 text-lg font-bold">
+                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
+                    </h3>
+                    <p class="">
+                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
+                    </p>
+                </div>
+            @endforeach
+        </div>
+    </section>
+    @endif
+
+
 
 @endsection

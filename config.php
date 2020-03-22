@@ -20,8 +20,7 @@ return [
         ['url' => '#contact-us', 'text' => 'Contact'],
         ['url' => '/product', 'text' => 'Products'],
         ['url' => '#', 'text' => 'Factories'],
-        ['url' => '#', 'text' => 'Developers'],
-        ['url' => '#', 'text' => 'Architects & Engineers'],
+        ['url' => '#', 'text' => 'How it Works'],
     ],
     'services' => [
         'analytics' => 'UA-XXXXX-Y',

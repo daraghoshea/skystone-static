@@ -39,10 +39,10 @@
         </div>
     </section>
 
-    <section class="bg-ssg-black py-24 md:py-32 px-6 flex items-center justify-center text-white">
+    <section class="bg-gray-100 py-24 md:py-32 px-6 flex items-center justify-center">
         <div class="max-w-3xl mx-auto">
-            <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Offices & Factories</p>
-            <h2 class="text-3xl text-white mb-2 text-underline">Skystone Locations</h2>
+            <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Global Reach</p>
+            <h2 class="text-3xl mb-2 text-underline">Skystone Markets</h2>
 
             <div class="grid gap-12 md:grid-cols-2 mt-32">
                 <div class="">
@@ -58,6 +58,16 @@
                 <div class="">
                     <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">UK & Ireland</h4>
                     <p>Operating as part of a Joint Venture partnership with Mac Group to delivery turnkey construction projects. Offices in Dublin, Birmingham, Manchester, and London. Projects delivered from our facility in Poland.</p>
+                    <p class="mt-3">
+                        <a href="http://www.macskystone.com" target="_blank" rel="nofollow" class="btn btn--red-outline anim-hover--fade inline-flex items-center">
+                            Visit macskystone.com
+                            <svg class="h-3 w-3 ml-2" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 11V17C16 17.5304 15.7893 18.0391 15.4142 18.4142C15.0391 18.7893 14.5304 19 14 19H3C2.46957 19 1.96086 18.7893 1.58579 18.4142C1.21071 18.0391 1 17.5304 1 17V6C1 5.46957 1.21071 4.96086 1.58579 4.58579C1.96086 4.21071 2.46957 4 3 4H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 1H19V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12L19 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </p>
                 </div>
                 <div class="">
                     @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584834479/skystone-map-uk-ireland_kznzwd.png', 'alt' => 'Skystone UK & Ireland highlighted on a map'])
@@ -69,7 +79,7 @@
                     @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584834479/skystone-map-australia_ghn98r.png', 'alt' => 'Skystone UK & Ireland highlighted on a map'])
                 </div>
                 <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">UK & Ireland</h4>
+                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Australia and New Zealand</h4>
                     <p>Delivering modular solutions to the Australia and New Zealand market by a dedicated team of industry professionals. Modules delivered from our Malaysian factory.</p>
                 </div>
             </div>
@@ -77,13 +87,13 @@
 
             <div class="grid gap-12 md:grid-cols-2 mt-32">
                 <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Malaysia</h4>
-                    <p>Our factory in Malaysia is very near to the port in Jahor. We combine manufacturing capability and capacity, with a rich supply chain of US compliant materials.</p>
-                </div>
-
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Poland</h4>
-                    <p>Our factory leverages the quality of polish quality workmanship with availability of quality materials for the Irish and UK market.</p>
+                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Our Factories</h4>
+                    <p>We are uniquely placed as a modular manufacturer with production capabilities on two continents.</p>
+                    <p class="mt-3">
+                        <a href="/factories" class="btn btn--red-outline anim-hover--fade">
+                            More about our Factories
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -94,7 +104,7 @@
         <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Hospitality & Residential Experts</p>
         <h2 class="text-2xl text-underline mb-4">Skystone Projects</h2>
 
-        <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($projects as $project)
                 <div>
                     <a href="{{$project->getPath()}}" class="block relative">
@@ -108,6 +118,7 @@
                         <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
                     </p>
                 </div>
+
                 <div>
                     <a href="{{$project->getPath()}}" class="block relative">
                         <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />

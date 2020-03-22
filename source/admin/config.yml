@@ -15,6 +15,29 @@ media_library:
     api_key: 593158426644373
 
 collections:
+  - name: 'settings'
+    label: 'Settings'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'general'
+        label: 'Site Settings'
+        file: 'source/_data/settings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: ga_analytics_id, widget: string }
+          - { label: 'Favicon', name: favicon, widget: image, allow_multiple: false }
+      - name: 'offices'
+        label: 'Offices'
+        file: 'source/_data/offices.json'
+        description: 'Office Locations'
+        widget: list
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Telephone", name: "telephone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
   - label: "Projects"
     name: "projects"
     folder: "source/_projects"
