@@ -5,7 +5,7 @@
         <header slot-scope="{style, scroll}" class="bg-ssg-black flex h-screen items-center justify-center overflow-hidden relative w-full">
 
             @include('_partials.cloudinary-image', [
-                'url' => 'https://res.cloudinary.com/skystone/image/upload/v1584847450/cages_pm83ed.jpg',
+                'url' => $page->data('pages/projects', 'main_image'),
                 'alt' => "Skystone steel cages lined up in the factory",
                 'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(40%); z-index:0" :style="style"'
             ])
@@ -21,13 +21,10 @@
     </full-screen-media>
 
     <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
-        <pre>
-            {{$page->data('pages/projects')}}
-        </pre>
         <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($projects as $project)
                 <div>
-                    <a href="{{$project->getPath()}}" class="block relative">
+                    <a href="{{$project->getPath()}}" class="block relative hover:opacity-75">
                         <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale')}}" />
                         <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
                     </a>

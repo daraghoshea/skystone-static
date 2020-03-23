@@ -46,15 +46,6 @@ $otherProjects = $projects->reject(function($project) use ($page) {
                 <div class="markdown md:col-span-3">
                     @yield('description')
 
-                    <p>This 26-story hotel in midtown Manhattan will be the tallest modular hotel in the world. Skystone is currently fabricating the 168 modules in a factory in Poland, using manufacturing subcontractors STP Elbud (Steel), Aluprof (Facade), DMD Modular (Fit-out manufacturing) and several others. The hotel has 8 different module types per floor, each surrounding a conventional concrete core.</p>
-                    <p>As the modular designer, manufacturer & installer, to general contractor, Skystone has had exceptional control over every process of the project.</p>
-
-                    <p>This 26-story hotel in midtown Manhattan will be the tallest modular hotel in the world. Skystone is currently fabricating the 168 modules in a factory in Poland, using manufacturing subcontractors STP Elbud (Steel), Aluprof (Facade), DMD Modular (Fit-out manufacturing) and several others. The hotel has 8 different module types per floor, each surrounding a conventional concrete core.</p>
-                    <p>As the modular designer, manufacturer & installer, to general contractor, Skystone has had exceptional control over every process of the project.</p>
-
-                    <p>This 26-story hotel in midtown Manhattan will be the tallest modular hotel in the world. Skystone is currently fabricating the 168 modules in a factory in Poland, using manufacturing subcontractors STP Elbud (Steel), Aluprof (Facade), DMD Modular (Fit-out manufacturing) and several others. The hotel has 8 different module types per floor, each surrounding a conventional concrete core.</p>
-                    <p>As the modular designer, manufacturer & installer, to general contractor, Skystone has had exceptional control over every process of the project.</p>
-
                 </div>
             </div>
         </div>

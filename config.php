@@ -18,6 +18,7 @@ return [
     'nav' => [
         ['url' => '/about', 'text' => 'About'],
         ['url' => '#contact-us', 'text' => 'Contact'],
+        ['url' => '/projects', 'text' => 'Projects'],
         ['url' => '/product', 'text' => 'Products'],
         ['url' => '#', 'text' => 'Factories'],
         ['url' => '#', 'text' => 'How it Works'],
@@ -64,8 +65,11 @@ return [
         return Str::contains($page->getPath(), $section) ? 'selected' : '';
     },
     'data' => function($page, $file, $key = '') {
-        $filepath = __DIR__ . "/source/_data/" . str_replace('.', '/', $file);
-        $contents = @json_decode(file_get_contents($filepath));
+        $filepath = __DIR__ . "/source/_data/" . str_replace('.', '/', $file) . ".json";
+        if( ! file_exists($filepath) ) {
+            throw new Error("No data found at '{$filepath}'");
+        }
+        $contents = json_decode(file_get_contents($filepath));
         return $key ? $contents->{$key} : $contents;
     }
 ];

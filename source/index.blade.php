@@ -107,7 +107,7 @@
         <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($projects as $project)
                 <div>
-                    <a href="{{$project->getPath()}}" class="block relative">
+                    <a href="{{$project->getPath()}}" class="block relative hover:opacity-75">
                         <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale')}}" />
                         <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
                     </a>
@@ -119,7 +119,7 @@
                     </p>
                 </div>
             @empty
-                <p class="text-gray-300">No projects added yet.</p> 
+                <p class="text-gray-300">No projects added yet.</p>
             @endforelse
         </div>
     </section>
