@@ -119,7 +119,7 @@
                     </p>
                 </div>
             @empty
-                <p class="text-gray-300">No projects added yet.</p>
+                <p class="text-gray-300">No projects added yet.</p> 
             @endforelse
         </div>
     </section>

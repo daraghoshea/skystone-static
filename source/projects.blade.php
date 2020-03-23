@@ -21,6 +21,9 @@
     </full-screen-media>
 
     <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
+        <pre>
+            {{$page->data('pages/projects')}}
+        </pre>
         <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($projects as $project)
                 <div>

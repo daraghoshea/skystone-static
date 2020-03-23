@@ -63,4 +63,9 @@ return [
     'isActiveRoute' => function ($page, $section) {
         return Str::contains($page->getPath(), $section) ? 'selected' : '';
     },
+    'data' => function($page, $file, $key = '') {
+        $filepath = __DIR__ . "/source/_data/" . str_replace('.', '/', $file);
+        $contents = @json_decode(file_get_contents($filepath));
+        return $key ? $contents->{$key} : $contents;
+    }
 ];

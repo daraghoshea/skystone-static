@@ -45,13 +45,20 @@ collections:
     delete: false
     editor:
       preview: false
+
     files:
       - name: 'projects'
         label: "Projects"
         file: "source/_data/pages/projects.json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Main Image", name: "main_image", widget: "string" }
+          - {
+            label: "Main Image",
+            name: "main_image",
+            widget: "image",
+            hint: "Should be a large image of minimum 1200px x 675px",
+            allow_multiple: false
+          }
 
   - label: "Projects"
     name: "projects"
