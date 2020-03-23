@@ -26,8 +26,9 @@ collections:
         file: 'source/_data/settings.json'
         description: 'General Site Settings'
         fields:
-          - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: ga_analytics_id, widget: string }
-          - { label: 'Favicon', name: favicon, widget: image, allow_multiple: false }
+          - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: "ga_analytics_id", widget: "string", "hint": "Just enter the Google Analytics ID, not the full code snippet" }
+          - { label: 'Favicon', name: "favicon", widget: "image", allow_multiple: false, "hint": "Should be 64x64 size ideally" }
+          - { label: 'Show Factories', name: "show_factories", widget: "boolean", default: true, "hint": "Whether to show the factories on the website" }
       - name: 'offices'
         label: 'Offices'
         file: 'source/_data/offices.json'
