@@ -39,6 +39,20 @@ collections:
           - { label: "Address", name: "address", widget: "string" }
           - { label: "Telephone", name: "telephone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
+
+  - label: "Pages"
+    name: "pages"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: 'projects'
+        label: "Projects"
+        file: "source/_data/pages/projects.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Main Image", name: "main_image", widget: "string" }
+
   - label: "Projects"
     name: "projects"
     folder: "source/_projects"
@@ -49,6 +63,7 @@ collections:
       - {label: "Sector", name: "sector", collapsed: false, widget: "list" }
       - {label: "Main Image", name: "image", widget: "image", allow_multiple: false, media_library: { config: { multiple: false } } }
       - {label: "Content", name: "body", widget: "markdown"}
+
   - name: "posts"
     label: "Posts"
     label_singular: "Post"

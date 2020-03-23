@@ -108,32 +108,7 @@
             @forelse ($projects as $project)
                 <div>
                     <a href="{{$project->getPath()}}" class="block relative">
-                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
-                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
-                    </a>
-                    <h3 class="my-3 text-lg font-bold">
-                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
-                    </h3>
-                    <p class="">
-                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
-                    </p>
-                </div>
-
-                <div>
-                    <a href="{{$project->getPath()}}" class="block relative">
-                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
-                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
-                    </a>
-                    <h3 class="my-3 text-lg font-bold">
-                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
-                    </h3>
-                    <p class="">
-                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
-                    </p>
-                </div>
-                <div>
-                    <a href="{{$project->getPath()}}" class="block relative">
-                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
+                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale')}}" />
                         <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
                     </a>
                     <h3 class="my-3 text-lg font-bold">
