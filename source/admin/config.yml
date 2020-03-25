@@ -5,6 +5,11 @@ backend:
 
 local_backend: true
 
+#backend:
+#  name: proxy
+#  proxy_url: http://localhost:8081/api/v1
+#  branch: master
+
 publish_mode: editorial_workflow
 #media_folder: images # required but unused, host images externally
 
@@ -26,26 +31,29 @@ collections:
         file: 'source/_data/settings.json'
         description: 'General Site Settings'
         fields:
-          - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: "ga_analytics_id", widget: "string", "hint": "Just enter the Google Analytics ID, not the full code snippet" }
-          - { label: 'Favicon', name: "favicon", widget: "image", allow_multiple: false, "hint": "Should be 64x64 size ideally" }
+          - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: "ga_analytics_id", widget: "string", "hint": "Just enter the Google Analytics ID, not the full code snippet", required: false }
+          - { label: 'Favicon', name: "favicon", widget: "image", allow_multiple: false, "hint": "Should be 64x64 size ideally", required: false }
           - { label: 'Show Factories', name: "show_factories", widget: "boolean", default: true, "hint": "Whether to show the factories on the website" }
       - name: 'offices'
         label: 'Offices'
         file: 'source/_data/offices.json'
         description: 'Office Locations'
-        widget: list
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Address", name: "address", widget: "string" }
-          - { label: "Telephone", name: "telephone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
+          - label: "Offices"
+            label_singular: "Office"
+            name: "offices"
+            widget: "list"
+            fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Address", name: "address", widget: "string" }
+            - { label: "Telephone", name: "telephone", widget: "string", required: false }
+            - { label: "Email", name: "email", widget: "string", required: false }
 
   - label: "Pages"
     name: "pages"
     delete: false
     editor:
       preview: false
-
     files:
       - name: 'projects'
         label: "Projects"
@@ -59,28 +67,59 @@ collections:
             hint: "Should be a large image of minimum 1200px x 675px",
             allow_multiple: false
           }
+          - { label: "Main Image Description", name: "main_image_alt", widget: "string", hint: "Describe what the image looks like. Needed for SEO" }
+      - name: 'about'
+        label: "About"
+        file: "source/_data/pages/about.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+            label: "Main Image",
+            name: "main_image",
+            widget: "image",
+            hint: "Should be a large image of minimum 1200px x 675px",
+            allow_multiple: false
+          }
+          - { label: "Main Image Description", name: "main_image_alt", widget: "string", hint: "Describe what the image looks like. Needed for SEO" }
+      - name: 'product'
+        label: "Product"
+        file: "source/_data/pages/product.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+            label: "Main Image",
+            name: "main_image",
+            widget: "image",
+            hint: "Should be a large image of minimum 1200px x 675px",
+            allow_multiple: false
+          }
+          - { label: "Main Image Description", name: "main_image_alt", widget: "string", hint: "Describe what the image looks like. Needed for SEO" }
 
   - label: "Projects"
     name: "projects"
     folder: "source/_projects"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Status", name: "status", widget: "string" }
-      - {label: "Sector", name: "sector", collapsed: false, widget: "list" }
+      - {label: "Title", name: "title", widget: "string", required: true }
+      - {label: "Location", name: "location", widget: "string", required: false }
+      - {label: "Status", name: "status", widget: "string", required: true }
+      - {label: "Sectors", name: "sector", widget: "list", required: false }
+      - {label: "Rooms/Keys", name: "rooms", widget: "string", hint: "Type in 'rooms' or 'keys' after the number"}
+      - {label: "Floors", name: "floors", widget: "number" }
+      - {label: "Completion Date (Hidden, Ordering)", name: "order", widget: "datetime", dateFormat: "DD MMM YYYY", hint: "Not shown on site, just used to order projects, showing most recent first" }
+      - {label: "Completion", name: "completion", widget: "string", hint: "This will be shown on the site, put in a month (eg Mar 2022) or a quarter (eg Q1 2022)" }
       - {label: "Main Image", name: "image", widget: "image", allow_multiple: false, media_library: { config: { multiple: false } } }
       - {label: "Content", name: "body", widget: "markdown"}
 
-  - name: "posts"
-    label: "Posts"
-    label_singular: "Post"
-    folder: "source/_posts"
+  - name: "news"
+    label: "News"
+    label_singular: "News Item"
+    folder: "source/_news"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string", default: "Title"}
-      - {label: "Date", name: "date", widget: "date"}
+      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Image Filename", name: "image", widget: "string", required: false}
-      - {label: "Comments", name: "comments", widget: "boolean", default: true}
       - {label: "Body", name: "body", widget: "markdown"}

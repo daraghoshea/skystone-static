@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-
+            @if( $page->data('settings', 'show_factories') !== false )
             <div class="grid gap-12 md:grid-cols-2 mt-32">
                 <div class="">
                     <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Our Factories</h4>
@@ -96,6 +96,7 @@
                     </p>
                 </div>
             </div>
+            @endif
         </div>
     </section>
 
@@ -106,18 +107,7 @@
 
         <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @forelse ($projects as $project)
-                <div>
-                    <a href="{{$project->getPath()}}" class="block relative hover:opacity-75">
-                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale')}}" />
-                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
-                    </a>
-                    <h3 class="my-3 text-lg font-bold">
-                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
-                    </h3>
-                    <p class="">
-                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
-                    </p>
-                </div>
+                @include('_partials.projects.thumb-link', ['project' => $project])
             @empty
                 <p class="text-gray-300">No projects added yet.</p>
             @endforelse

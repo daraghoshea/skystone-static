@@ -3,6 +3,10 @@ title: 'POD Hotel - Brooklyn, NYC'
 status: Completed
 sector:
   - Hospitality
+rooms: 251 Keys
+floors: 19
+order: 2016-11-25T00:25:00.000Z
+completion: '2016'
 image: >-
   https://res.cloudinary.com/skystone/image/upload/v1584984196/pod-hotel-brooklyn-1_pxjjqv.jpg
 ---

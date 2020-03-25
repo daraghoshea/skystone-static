@@ -1,1 +1,22 @@
-{}
+{
+  "offices": [
+    {
+      "title": "New York",
+      "address": "10 East 33rd Street, 4th Floor  New York, NY 10016",
+      "telephone": "+1 (212) 779-1527",
+      "email": "info@skystone.com"
+    },
+    {
+      "title": "California",
+      "address": "600 B Street, 8th Floor  San Diego, CA 92101 ",
+      "telephone": "+1 (347) 835-8150",
+      "email": ""
+    },
+    {
+      "title": "Singapore",
+      "address": "Somewhere in singapore",
+      "telephone": "+123345678",
+      "email": ""
+    }
+  ]
+}

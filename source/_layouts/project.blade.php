@@ -34,6 +34,37 @@ $otherProjects = $projects->reject(function($project) use ($page) {
 
             <div class="grid gap-8 md:grid-cols-4 mt-16">
                 <div class="row-start-2 md:row-start-1">
+                    @if($page->location)
+                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Location</h3>
+                    <div class="mb-6">
+                        {{$page->location}}
+                    </div>
+                    @endif
+
+                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Status</h3>
+                    <div class="mb-6">
+                        {{ucwords($page->status)}}
+                    </div>
+
+                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Completion</h3>
+                    <div class="mb-6">
+                        {{$page->completion}}
+                    </div>
+
+                    @if($page->rooms)
+                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Size</h3>
+                    <div class="mb-6">
+                        {{$page->rooms}}
+                    </div>
+                    @endif
+
+                    @if($page->floors)
+                        <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Floors</h3>
+                        <div class="mb-6">
+                            {{$page->floors}}
+                        </div>
+                    @endif
+
                     <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Sector</h3>
                     <div class="mb-6">
                         @forelse($page->sector as $sector)
@@ -56,18 +87,7 @@ $otherProjects = $projects->reject(function($project) use ($page) {
         <h2 class="text-2xl text-underline mb-4">Other Projects</h2>
         <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             @foreach ($otherProjects as $project)
-                <div>
-                    <a href="{{$project->getPath()}}" class="block relative">
-                        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,c_scale')}}" />
-                        <span class="absolute bottom-0 right-0 mb-2 mr-2 px-3 py-1 text-xs uppercase tracking-wide bg-ssg-red text-white rounded-full shadow">{{ucwords($project->status)}}</span>
-                    </a>
-                    <h3 class="my-3 text-lg font-bold">
-                        <a href="{{$project->getPath()}}">{{$project->title}}</a>
-                    </h3>
-                    <p class="">
-                        <a href="{{$project->getPath()}}" class="btn btn--red-outline anim-hover--fade">Learn More</a>
-                    </p>
-                </div>
+                @include('_partials.projects.thumb-link', ['project' => $project])
             @endforeach
         </div>
     </section>

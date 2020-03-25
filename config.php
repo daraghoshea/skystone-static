@@ -19,8 +19,7 @@ return [
         ['url' => '/about', 'text' => 'About'],
         ['url' => '#contact-us', 'text' => 'Contact'],
         ['url' => '/projects', 'text' => 'Projects'],
-        ['url' => '/product', 'text' => 'Products'],
-        ['url' => '#', 'text' => 'Factories'],
+        ['url' => '#', 'text' => 'Factories', 'factory' => true],
         ['url' => '#', 'text' => 'How it Works'],
     ],
     'services' => [
@@ -33,7 +32,8 @@ return [
         'projects' => [
             'path' => 'projects/{filename}',
             'extends' => '_layouts.project',
-            'section' => 'description'
+            'section' => 'description',
+            'sort' => '-order'
         ],
         'posts' => [
             'path' => 'posts/{filename}',
@@ -64,12 +64,17 @@ return [
     'isActiveRoute' => function ($page, $section) {
         return Str::contains($page->getPath(), $section) ? 'selected' : '';
     },
-    'data' => function($page, $file, $key = '') {
+    'data' => function($page, $file, $key = '', $default = '') {
         $filepath = __DIR__ . "/source/_data/" . str_replace('.', '/', $file) . ".json";
         if( ! file_exists($filepath) ) {
             throw new Error("No data found at '{$filepath}'");
         }
         $contents = json_decode(file_get_contents($filepath));
-        return $key ? $contents->{$key} : $contents;
+
+        if( ! $key ) {
+            return $contents;
+        }
+
+        return $contents->{$key} ?? $default;
     }
 ];

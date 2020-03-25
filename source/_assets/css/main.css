@@ -57,8 +57,18 @@
     width: 50px;
 }
 
+/** GRADIENTS **/
+.linear-black-gradient-top {
+    background: rgb(0,18,23);
+    background: linear-gradient(180deg, rgba(0,18,23,0.85) 25%, rgba(2,0,36,0) 100%);
+}
+.linear-black-gradient-bottom {
+    background: rgb(0,18,23);
+    background: linear-gradient(0deg, rgba(0,18,23,0.85) 25%, rgba(2,0,36,0) 100%);
+}
 
-/** COMPONENTS **/
+
+/** BUTTONS **/
 .btn {
     @apply px-4 py-2 inline-flex items-center rounded-sm outline-none text-sm font-sans uppercase;
 }

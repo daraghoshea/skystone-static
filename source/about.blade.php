@@ -6,12 +6,14 @@
 
 
             @include('_partials.cloudinary-image', [
-                'url' => 'https://res.cloudinary.com/skystone/image/upload/v1584844284/skystone-robotic-weld_shqqyx.jpg',
-                'alt' => "Skystone robotic weld of a steel cage",
+                'url' => $page->data('pages/about', 'main_image'),
+                'alt' => $page->data('pages/about', 'main_image_alt'),
                 'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(50%); z-index:0" :style="style"'
             ])
 
-            <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">High Quality Construction, Delivered Faster</h2>
+            <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">
+                {{$page->data('pages/about', 'title')}}
+            </h2>
 
             <button type="button" @click.prevent="scroll" class="absolute bottom-0 content-center focus:outline-none outline-none py-6 text-white w-full">
                 <div>Scroll</div>
@@ -50,56 +52,6 @@
                 </div>
 
                 <p class="mb-4 font-italic">Jack Dooley, Skystone CEO</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-ssg-black py-24 md:py-32 px-6 flex items-center justify-center text-white">
-        <div class="max-w-xl mx-auto">
-            <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Offices & Factories</p>
-            <h2 class="text-3xl text-white mb-2 text-underline">Skystone Locations</h2>
-
-            <div class="grid gap-12 md:grid-cols-2 mt-32">
-                <div class="">
-                    @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584834479/skystone-map-usa_gltgoq.png', 'alt' => 'Skystone USA highlighted on a map'])
-                </div>
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">USA</h4>
-                    <p>We have offices in New York and California serving both coasts of the USA. All of our US projects are served from our dedicated facility in Malaysia.</p>
-                </div>
-            </div>
-
-            <div class="grid gap-12 md:grid-cols-2 mt-32">
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">UK & Ireland</h4>
-                    <p>Operating as part of a Joint Venture partnership with Mac Group to delivery turnkey construction projects. Offices in Dublin, Birmingham, Manchester, and London. Projects delivered from our facility in Poland.</p>
-                </div>
-                <div class="">
-                    @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584834479/skystone-map-uk-ireland_kznzwd.png', 'alt' => 'Skystone UK & Ireland highlighted on a map'])
-                </div>
-            </div>
-
-            <div class="grid gap-12 md:grid-cols-2 mt-32">
-                <div class="">
-                    @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584834479/skystone-map-australia_ghn98r.png', 'alt' => 'Skystone UK & Ireland highlighted on a map'])
-                </div>
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">UK & Ireland</h4>
-                    <p>Delivering modular solutions to the Australia and New Zealand market by a dedicated team of industry professionals. Modules delivered from our Malaysian factory.</p>
-                </div>
-            </div>
-
-
-            <div class="grid gap-12 md:grid-cols-2 mt-32">
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Malaysia</h4>
-                    <p>Our factory in Malaysia is very near to the port in Jahor. We combine manufacturing capability and capacity, with a rich supply chain of US compliant materials.</p>
-                </div>
-
-                <div class="">
-                    <h4 class="text-xl font-bold mb-3 font-serif uppercase tracking-wide">Poland</h4>
-                    <p>Our factory leverages the quality of polish quality workmanship with availability of quality materials for the Irish and UK market.</p>
-                </div>
             </div>
         </div>
     </section>

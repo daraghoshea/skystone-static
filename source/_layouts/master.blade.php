@@ -8,9 +8,9 @@
         @yield('title')
         {{ !empty($__env->yieldContent('title')) ? ' | ' : '' }}
         {{ $page->site->title }}
-    </title>
+    </title> 
 
-    @include('_partials.head.favicon')
+    @include('_partials.head.favicon', ['url' => $page->data('settings', 'favicon')])
     @include('_partials.head.meta')
     @include('_partials.cms.identity_widget')
 
