@@ -5,7 +5,7 @@
     "image": "https://res.cloudinary.com/skystone/image/upload/v1585135251/skystone-site-default_ftqvd2.jpg"
   },
   "favicon": "https://res.cloudinary.com/skystone/image/upload/v1585093896/favicon.png",
-  "show_factories": true,
+  "show_factories": false,
   "social": {
     "twitter": "http://www.twitter.com/skystonegroup",
     "facebook": "https://www.facebook.com/skystonegroup",
