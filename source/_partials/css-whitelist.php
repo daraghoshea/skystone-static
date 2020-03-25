@@ -5,4 +5,5 @@
     xl:pr-4 lg:pr-4 md:pr-4 sm:pr-4
     xl:hidden lg:hidden md:hidden sm:hidden
     xl:w-auto lg:w-auto md:w-auto sm:w-auto
+    glide__bullets glide__bullet glide__bullet--active
 "></div>

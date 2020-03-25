@@ -13,7 +13,6 @@ return [
     'owner' => [
         'name' => 'John Doe',
         'twitter' => 'johndoe',
-        'github' => 'johndoe',
     ],
     'nav' => [
         ['url' => '/about', 'text' => 'About'],
@@ -35,17 +34,22 @@ return [
             'section' => 'description',
             'sort' => '-order'
         ],
-        'posts' => [
-            'path' => 'posts/{filename}',
+        'news' => [
+            'path' => 'news/{filename}',
             'sort' => '-date',
-            'extends' => '_layouts.post',
+            'extends' => '_layouts.news',
             'section' => 'postContent',
-            'isPost' => true,
-            'comments' => true
-        ]
+            'hasExcerpt' => true
+        ],
+        'testimonials' => [
+            'path' => 'projects/{filename}',
+            'extends' => '_layouts.project',
+            'section' => 'description',
+            'sort' => '-order'
+        ],
     ],
     'excerpt' => function ($page, $limit = 250, $end = '...') {
-        return $page->isPost
+        return $page->hasExcerpt
             ? str_limit_soft(content_sanitize($page->getContent()), $limit, $end)
             : null;
     },
@@ -75,6 +79,10 @@ return [
             return $contents;
         }
 
-        return $contents->{$key} ?? $default;
+        return data_get($contents, $key) ?? $default;
+    },
+    'twitterHandle' => function($page) {
+        $url = $page->data('settings', 'social.twitter');
+        return "@" . explode("/",ltrim(parse_url($url, PHP_URL_PATH), "/"))[0];
     }
 ];

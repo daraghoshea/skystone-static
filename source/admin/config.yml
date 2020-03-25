@@ -5,12 +5,6 @@ backend:
 
 local_backend: true
 
-#backend:
-#  name: proxy
-#  proxy_url: http://localhost:8081/api/v1
-#  branch: master
-
-publish_mode: editorial_workflow
 #media_folder: images # required but unused, host images externally
 
 media_library:
@@ -31,9 +25,24 @@ collections:
         file: 'source/_data/settings.json'
         description: 'General Site Settings'
         fields:
+          - label: "Site Details"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: 'Title', name: "title", widget: "string" }
+              - { label: 'Description', name: "description", widget: "string", hint: "Max 250 characters" }
+              - { label: 'Default Image', name: 'image', widget: 'image', multiple: false }
           - { label: 'Google Analytics (eg. UA-XXXXX-Y)', name: "ga_analytics_id", widget: "string", "hint": "Just enter the Google Analytics ID, not the full code snippet", required: false }
           - { label: 'Favicon', name: "favicon", widget: "image", allow_multiple: false, "hint": "Should be 64x64 size ideally", required: false }
           - { label: 'Show Factories', name: "show_factories", widget: "boolean", default: true, "hint": "Whether to show the factories on the website" }
+          - label: "Social Media"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: 'Twitter Url', name: "twitter", widget: "string", "hint": "The full twitter.com url", required: false }
+              - { label: 'Facebook Url', name: "facebook", widget: "string", "hint": "The full facebook.com url", required: false }
+              - { label: 'Instagram Url', name: "instagram", widget: "string", "hint": "The full instagram.com url", required: false }
+              - { label: 'LinkedIn Url', name: "linkedin", widget: "string", "hint": "The full linkedin.com url", required: false }
       - name: 'offices'
         label: 'Offices'
         file: 'source/_data/offices.json'
@@ -123,3 +132,15 @@ collections:
       - {label: "Tags", name: "tags", widget: "list", required: false}
       - {label: "Image Filename", name: "image", widget: "string", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "source/_testimonials"
+    create: true
+    fields:
+      - {label: "Company", name: "title", widget: "string", default: "Company"}
+      - {label: "Person", name: "person", widget: "string", required: true}
+      - {label: "Role", name: "role", widget: "string", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Quote", name: "quote", widget: "markdown"}

@@ -29,33 +29,43 @@
         @endforeach
     </div>
 </section>
-<footer class="bg-ssg-black py-12 md:py-18 px-6 text-white">
+<footer class="bg-ssg-black pt-12 pb-6 md:py-18 px-6 text-white">
     <div class="max-w-3xl mx-auto grid gap-12 sm:grid-cols-2 md:grid-cols-3">
         <div>
             <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Menu</h3>
             <ul class="list-reset">
                 @foreach($page->nav as $nav)
                     <li class="mb-1">
+                        @php
+                            if( ( $nav['factory'] ?? false )  && $page->data('settings', 'show_factories') === false) {
+                                continue;
+                            }
+                        @endphp
                         <a href="{{$nav['url']}}" class="py-2 border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">{{$nav['text']}}</a>
                     </li>
                 @endforeach
             </ul>
         </div>
 
+        {{-- Social Media--}}
         <div class="">
             <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Social Media</h3>
 
+            {{-- The Admin UI has a url input for each of the social media accounts below --}}
             <ul class="list-reset">
+                @if($page->data('settings', 'social.facebook'))
                 <li class="mb-1">
-                    <a href="https://www.facebook.com/skystonegroup" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
+                    <a href="{{$page->data('settings', 'social.facebook')}}" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
                         <svg class="h-3 w-3 mr-2" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 1H9C7.67392 1 6.40215 1.52678 5.46447 2.46447C4.52678 3.40215 4 4.67392 4 6V9H1V13H4V21H8V13H11L12 9H8V6C8 5.73478 8.10536 5.48043 8.29289 5.29289C8.48043 5.10536 8.73478 5 9 5H12V1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Facebook
                     </a>
                 </li>
+                @endif
+                @if($page->data('settings', 'social.linkedin'))
                 <li class="mb-1">
-                    <a href="https://www.linkedin.com/company/3827090/" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
+                    <a href="{{$page->data('settings', 'social.linkedin')}}" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
                         <svg class="h-3 w-3 mr-2" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 7C16.5913 7 18.1174 7.63214 19.2426 8.75736C20.3679 9.88258 21 11.4087 21 13V20H17V13C17 12.4696 16.7893 11.9609 16.4142 11.5858C16.0391 11.2107 15.5304 11 15 11C14.4696 11 13.9609 11.2107 13.5858 11.5858C13.2107 11.9609 13 12.4696 13 13V20H9V13C9 11.4087 9.63214 9.88258 10.7574 8.75736C11.8826 7.63214 13.4087 7 15 7V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M5 8H1V20H5V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,14 +74,28 @@
                         LinkedIn
                     </a>
                 </li>
+                @endif
+                @if($page->data('settings', 'social.twitter'))
                 <li class="mb-1">
-                    <a href="http://www.twitter.com/skystonegroup" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
+                    <a href="{{$page->data('settings', 'social.twitter')}}" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
                         <svg class="h-3 w-3 mr-2" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23 1.01006C22.0424 1.68553 20.9821 2.20217 19.86 2.54006C19.2577 1.84757 18.4573 1.35675 17.567 1.13398C16.6767 0.911216 15.7395 0.967251 14.8821 1.29451C14.0247 1.62177 13.2884 2.20446 12.773 2.96377C12.2575 3.72309 11.9877 4.62239 12 5.54006V6.54006C10.2426 6.58562 8.50127 6.19587 6.93101 5.4055C5.36074 4.61513 4.01032 3.44869 3 2.01006C3 2.01006 -1 11.0101 8 15.0101C5.94053 16.408 3.48716 17.109 1 17.0101C10 22.0101 21 17.0101 21 5.51006C20.9991 5.23151 20.9723 4.95365 20.92 4.68006C21.9406 3.67355 22.6608 2.40277 23 1.01006V1.01006Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         Twitter
                     </a>
                 </li>
+                @endif
+                @if($page->data('settings', 'social.instagram'))
+                    <li class="mb-1">
+                        <a href="{{$page->data('settings', 'social.instagram')}}" target="_blank" rel="nofollow" class="inline-flex items-center border-b-2 border-transparent font-medium text-white hover:text-ssg-red focus:outline-none focus:text-ssg-red">
+                            <svg class="h-3 w-3 mr-2" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1H6C3.23858 1 1 3.23858 1 6V16C1 18.7614 3.23858 21 6 21H16C18.7614 21 21 18.7614 21 16V6C21 3.23858 18.7614 1 16 1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15 10.37C15.1234 11.2022 14.9813 12.0522 14.5938 12.799C14.2063 13.5458 13.5932 14.1514 12.8416 14.5297C12.0901 14.9079 11.2385 15.0396 10.4078 14.9059C9.57714 14.7723 8.80977 14.3801 8.21485 13.7852C7.61993 13.1902 7.22774 12.4229 7.09408 11.5922C6.96041 10.7615 7.09208 9.90989 7.47034 9.15837C7.8486 8.40685 8.4542 7.79374 9.201 7.40624C9.9478 7.01874 10.7978 6.87658 11.63 7C12.4789 7.12588 13.2649 7.52146 13.8717 8.1283C14.4785 8.73515 14.8741 9.52107 15 10.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Instagram
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
 
@@ -79,7 +103,7 @@
             <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Resources</h3>
         </div>
     </div>
-    <p class="text-center mt-8 text-gray-500">
+    <p class="text-center mt-8 text-sm text-white opacity-25">
         &copy; Skystone Group LLC. All rights reserved.
     </p>
 </footer>

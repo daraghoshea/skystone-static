@@ -351,3 +351,18 @@
 .markdown>ol li pre code,.markdown>pre code,.markdown>ul li pre code,pre code.markdown {
     padding: 1rem
 }
+
+
+
+/** SLIDER **/
+.glide__bullets {
+    @apply text-center;
+}
+
+.glide__bullet {
+    @apply h-4 w-4 mx-1 rounded-full bg-ssg-black transform duration-200 ease-linear;
+}
+
+.glide__bullet--active {
+    @apply bg-ssg-red;
+}

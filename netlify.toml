@@ -3,3 +3,67 @@
 command = "npm run production"
 publish = "build_production"
 environment = { PHP_VERSION = "7.4" }
+
+[[redirects]]
+  from = "/pod-hotel"
+  to = "/projects/pod-hotel-brooklyn-nyc"
+  status = 301
+
+[[redirects]]
+  from = "/citizenm-times-square"
+  to = "/projects/185-bowery-nyc"
+  status = 301
+
+[[redirects]]
+  from = "/alt-hotel-saint-johns"
+  to = "/projects/alt-st-johns-newfoundland"
+  status = 301
+
+[[redirects]]
+  from = "/m-social-modular-hotel"
+  to = "/projects/marriott-ac-802-6th-avenue-nyc/"
+  status = 301
+
+[[redirects]]
+  from = "/citizenm-times-square"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/2-mill-street-yonkers"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/philippine-consulate"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "structural-steel-cage-solutions"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/m-social-4-star-modular-hotel"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/gallery"
+  to = "/projects"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#contact-us"
+  status = 301
+
+
+
+

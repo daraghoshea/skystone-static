@@ -1,4 +1,15 @@
 {
+  "site": {
+    "title": "Skystone Modular",
+    "description": "Your Volumetric Modular Construction Partner",
+    "image": "https://res.cloudinary.com/skystone/image/upload/v1585135251/skystone-site-default_ftqvd2.jpg"
+  },
   "favicon": "https://res.cloudinary.com/skystone/image/upload/v1585093896/favicon.png",
-  "show_factories": true
+  "show_factories": true,
+  "social": {
+    "twitter": "http://www.twitter.com/skystonegroup",
+    "facebook": "https://www.facebook.com/skystonegroup",
+    "instagram": "https://www.instagram.com/skystonegroup/",
+    "linkedin": "https://www.linkedin.com/company/3827090/"
+  }
 }

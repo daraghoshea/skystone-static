@@ -2,9 +2,13 @@ import Vue from 'vue';
 
 import Navigation from './components/Navigation'
 import FullScreenMedia from "./components/FullScreenMedia";
+import VueGlide from 'vue-glide-js'
+import 'vue-glide-js/dist/vue-glide.css'
 
 Vue.component('navigation', Navigation);
 Vue.component('full-screen-media', FullScreenMedia);
+
+Vue.use(VueGlide);
 
 new Vue({
     el: "#app",
