@@ -26,7 +26,7 @@
     <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
         <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-5">
             <div class="md:col-span-2">
-                @include('_partials.cloudinary-image', ['url' => 'https://res.cloudinary.com/skystone/image/upload/v1584844609/Jack_Dooley_1_fk6f0u.jpg', 'alt' => 'Portrait photo of Jack Dooley, Skystone CEO'])
+                @include('_partials.cloudinary-image', ['url' => 'https://res.cloudinary.com/skystone/image/upload/w_550,c_scale/v1584844609/Jack_Dooley_1_fk6f0u.jpg', 'alt' => 'Portrait photo of Jack Dooley, Skystone CEO'])
             </div>
             <div class="md:px-8 md:col-span-3">
                 <p class="text-xl mb-4">At Skystone, we build higher quality buildings faster and more efficiently using modular technology.</p>

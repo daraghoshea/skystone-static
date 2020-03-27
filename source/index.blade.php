@@ -5,12 +5,13 @@
         <header slot-scope="{style, scroll}" class="bg-ssg-black flex h-screen items-center justify-center overflow-hidden relative w-full">
 
             <video class="full-screen-bg h-full"
-                   poster="{{$page->media("video/upload/so_0/v1584655179/homepage_myaus8.jpg")}}"
+                   poster="{{$page->media("video/upload/so_0/v1585316828/homepage-720_m7oniu.jpg")}}"
                    playsinline autoplay muted loop
                    style="filter:brightness(50%); z-index:0"
                    :style="style">
-                <source src="{{$page->media("video/upload/v1584655179/homepage_myaus8.webm")}}" type="video/webm">
-                <source src="{{$page->media("video/upload/v1584655179/homepage_myaus8.mp4")}}" type="video/mp4">
+                <source src="{{$page->media("video/upload/c_scale,f_auto,q_auto:eco,w_1015/v1585316828/homepage-720_m7oniu.webm")}}" type="video/webm">
+                <source src="{{$page->media("video/upload/c_scale,f_auto,q_auto:eco,w_1015/v1585316828/homepage-720_m7oniu.mov")}}" type="video/mov">
+                <source src="{{$page->media("video/upload/c_scale,f_auto,q_auto:eco,w_1015/v1585316828/homepage-720_m7oniu.mp4")}}" type="video/mp4">
             </video>
 
             <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">High-rise Volumetric <em>Modular</em> Construction</h2>
@@ -25,7 +26,7 @@
 
     <section class="bg-white py-24 md:py-48 px-6 sm:px-8 lg:px-12 grid gap-12 md:grid-cols-2">
         <div class="md:px-8">
-            @include('_partials.cloudinary-image', ['url' => 'image/upload/v1584806025/skystone-marriott-module-prototype-1_er7ps9.jpg', 'alt' => 'Skystone Marriott AC finished prototype module'])
+            <img class="mx-auto" src="{{$page->media('image/upload/w_500,c_scale,q_auto:eco/v1584806025/skystone-marriott-module-prototype-1_er7ps9.jpg')}}" alt="Skystone Marriott AC finished prototype module" />
         </div>
         <div class="max-w-xl mx-auto">
             <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Steel Specialists</p>

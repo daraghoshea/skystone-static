@@ -1,5 +1,5 @@
 <picture >
-    <source media="(max-width: 400px)" srcset="{{$page->cloudinaryTransform( $page->media($url), 'w_400,c_scale')}}">
-    <source media="(max-width: 800px)" srcset="{{$page->cloudinaryTransform( $page->media($url), 'w_800,c_scale')}}">
-    <img src="{{$page->media($url)}}" alt="{{$alt ?? ""}}" {!! $attributes ?? '' !!}>
+    <source media="(max-width: 400px)" srcset="{{$page->cloudinaryTransform( $page->media($url), 'w_400,c_scale,q_auto:eco')}}">
+    <source media="(max-width: 800px)" srcset="{{$page->cloudinaryTransform( $page->media($url), 'w_800,c_scale,q_auto:eco')}}">
+    <img src="{{$page->cloudinaryTransform( $page->media($url), 'w_1000,c_scale,q_auto:eco')}}" alt="{{$alt ?? ""}}" {!! $attributes ?? '' !!}>
 </picture>
