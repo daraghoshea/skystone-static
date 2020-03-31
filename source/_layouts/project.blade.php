@@ -34,49 +34,49 @@ $otherProjects = $projects->reject(function($project) use ($page) {
 
             <div class="grid gap-8 md:grid-cols-4 mt-16">
                 <div class="row-start-2 md:row-start-1">
-                    @if($page->location)
-                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Location</h3>
-                    <div class="mb-6">
-                        {{$page->location}}
-                    </div>
-                    @endif
 
-                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Status</h3>
-                    <div class="mb-6">
-                        {{ucwords($page->status)}}
-                    </div>
-
-                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Completion</h3>
-                    <div class="mb-6">
-                        {{$page->completion}}
-                    </div>
-
-                    @if($page->rooms)
-                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Size</h3>
-                    <div class="mb-6">
-                        {{$page->rooms}}
-                    </div>
-                    @endif
-
-                    @if($page->floors)
-                        <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Floors</h3>
-                        <div class="mb-6">
-                            {{$page->floors}}
-                        </div>
-                    @endif
-
-                    <h3 class="text-ssg-red text-sm uppercase tracking-wide font-serif mb-1">Sector</h3>
-                    <div class="mb-6">
+                    <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Sector</h3>
+                    <div class="mb-6 text-ssg-black opacity-75">
                         @forelse($page->sector as $sector)
                             <p>{{ucfirst($sector ?? '')}}</p>
                         @empty
                             <em class="text-gray-500">n/a</em>
                         @endforelse
                     </div>
+
+                    @if($page->location)
+                    <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Location</h3>
+                    <div class="mb-6 text-ssg-black opacity-75">
+                        {{$page->location}}
+                    </div>
+                    @endif
+
+                    <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Status</h3>
+                    <div class="mb-6 text-ssg-black opacity-75">
+                        {{ucwords($page->status)}}
+                    </div>
+
+                    <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Completion</h3>
+                    <div class="mb-6 text-ssg-black opacity-75">
+                        {{$page->completion}}
+                    </div>
+
+                    @if($page->rooms)
+                    <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Size</h3>
+                    <div class="mb-6 text-ssg-black opacity-75">
+                        {{$page->rooms}}
+                    </div>
+                    @endif
+
+                    @if($page->floors)
+                        <h3 class="text-ssg-red text-xs uppercase tracking-wide mb-1">Floors</h3>
+                        <div class="mb-6 text-ssg-black opacity-75">
+                            {{$page->floors}}
+                        </div>
+                    @endif
                 </div>
                 <div class="markdown md:col-span-3">
                     @yield('description')
-
                 </div>
             </div>
         </div>
