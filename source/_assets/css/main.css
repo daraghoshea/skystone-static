@@ -33,6 +33,11 @@
     transition: 1s opacity;
 }
 
+/** Default Image **/
+.lazyload {
+    @apply bg-gray-200 min-w-full min-h-full;
+}
+
 /** LOGO **/
 .ssg-logo--bg-white .ssg-logo__text path { fill: var(--ssg-black); }
 .ssg-logo--bg-white .ssg-logo__icon path { fill: var(--ssg-red); }

@@ -26,7 +26,7 @@
 
     <section class="bg-white py-24 md:py-48 px-6 sm:px-8 lg:px-12 grid gap-12 md:grid-cols-2">
         <div class="md:px-8">
-            <img class="mx-auto" src="{{$page->media('image/upload/w_500,c_scale,q_auto:eco/v1584806025/skystone-marriott-module-prototype-1_er7ps9.jpg')}}" alt="Skystone Marriott AC finished prototype module" />
+            <img class="mx-auto lazyload" src="{!! $page->placeholderImage() !!}" data-src="{{$page->media('image/upload/w_500,c_scale,q_auto:eco/v1584806025/skystone-marriott-module-prototype-1_er7ps9.jpg')}}" alt="Skystone Marriott AC finished prototype module" />
         </div>
         <div class="max-w-xl mx-auto">
             <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Steel Specialists</p>
@@ -106,7 +106,7 @@
         <p class="text-xs text-gray-500 uppercase mb-1 tracking-tight">Hospitality & Residential Experts</p>
         <h2 class="text-2xl text-underline mb-4">Skystone Projects</h2>
 
-        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             @forelse ($projects as $project)
                 @include('_partials.projects.thumb-link', ['project' => $project])
             @empty

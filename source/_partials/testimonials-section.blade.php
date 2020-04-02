@@ -12,7 +12,7 @@
                     <div class="flex items-center justify-center">
                         <div class="mr-4 md:mr-8 flex-none">
                             <div class="border-2 border-ssg-black rounded-full overflow-hidden">
-                                <img class="mx-auto max-w-full" src="{{str_replace(['.jpeg', '.jpg'], '.png', $page->cloudinaryTransform( $page->media( $test->image ), 'w_75,h_75,c_pad,b_auto'))}}" alt="{{$test->title}} logo" />
+                                <img class="mx-auto max-w-full lazyload" src="{!! $page->placeholderImage() !!}" data-src="{{str_replace(['.jpeg', '.jpg'], '.png', $page->cloudinaryTransform( $page->media( $test->image ), 'w_75,h_75,c_pad,b_auto'))}}" alt="{{$test->title}} logo" />
                             </div>
                         </div>
                         <div class="text-left">

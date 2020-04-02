@@ -8,7 +8,8 @@
             @include('_partials.cloudinary-image', [
                 'url' => 'https://res.cloudinary.com/skystone/image/upload/v1584847450/cages_pm83ed.jpg',
                 'alt' => "Skystone steel cages lined up in the factory",
-                'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(40%); z-index:0" :style="style"'
+                'class' => 'full-screen-bg h-full',
+                'attributes' => 'style="filter:brightness(40%); z-index:0" :style="style"'
             ])
 
             <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">High Quality Construction, Delivered Faster</h2>

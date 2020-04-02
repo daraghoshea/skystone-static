@@ -118,6 +118,7 @@ collections:
       - {label: "Completion Date (Hidden, Ordering)", name: "order", widget: "datetime", dateFormat: "DD MMM YYYY", hint: "Not shown on site, just used to order projects, showing most recent first" }
       - {label: "Completion", name: "completion", widget: "string", hint: "This will be shown on the site, put in a month (eg Mar 2022) or a quarter (eg Q1 2022)" }
       - {label: "Main Image", name: "image", widget: "image", allow_multiple: false, media_library: { config: { multiple: false } } }
+      - {label: "Gallery", name: "gallery", widget: "image", allow_multiple: true, media_library: { config: { multiple: true } }, required: false }
       - {label: "Content", name: "body", widget: "markdown"}
 
   - name: "news"

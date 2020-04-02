@@ -4,7 +4,7 @@
             {{$project->rooms}}
             @if($project->floors) <span class="ml-3">{{$project->floors}} floors</span> @endif
         </div>
-        <img alt="{{$project->title}} photo" src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale,q_auto:eco')}}" />
+        <img alt="{{$project->title}} photo" class="lazyload" src="{!! $page->placeholderImage() !!}" data-src="{{$page->cloudinaryTransform($project->image, 'w_400,h_225,c_scale,q_auto:eco')}}" />
         <div class="absolute bottom-0 right-0 w-full px-3 pb-2 pt-10 text-xs text-right text-gray-400 uppercase tracking-wide linear-black-gradient-bottom">
             {{ucwords($project->status)}}
             @if($project->completion) <span class="ml-3">{{$project->completion}}</span> @endif

@@ -8,7 +8,8 @@
             @include('_partials.cloudinary-image', [
                 'url' => $page->data('pages/projects', 'main_image'),
                 'alt' => $page->data('pages/projects', 'main_image_alt'),
-                'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(40%); z-index:0" :style="style"'
+                'class' => 'full-screen-bg h-full',
+                'attributes' => 'style="filter:brightness(40%); z-index:0" :style="style"'
             ])
 
             <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">

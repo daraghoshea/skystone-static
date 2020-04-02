@@ -59,6 +59,9 @@ return [
         }
         return "https://res.cloudinary.com/{$page->services->cloudinary}/{$path}";
     },
+    'placeholderImage' => function() {
+        return "data:image/svg+xml;utf8,%3Csvg width='1' height='1' viewBox='0 0 1 1' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1' height='1' fill='%23E0E0E0'/%3E%3C/svg%3E";
+    },
     'cloudinaryTransform' => function($page, $url, $transformation) {
         if( stripos($url, 'cloudinary') === false ) {
             return $url;

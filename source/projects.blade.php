@@ -7,7 +7,8 @@
             @include('_partials.cloudinary-image', [
                 'url' => $page->data('pages/projects', 'main_image'),
                 'alt' => $page->data('pages/projects', 'main_image_alt'),
-                'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(40%); z-index:0" :style="style"'
+                'class' => 'full-screen-bg h-full',
+                'attributes' => 'style="filter:brightness(40%); z-index:0" :style="style"'
             ])
 
             <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">
@@ -23,7 +24,7 @@
     </full-screen-media>
 
     <section class="bg-white py-24 md:py-32 px-6 sm:px-8 lg:px-12">
-        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             @forelse ($projects as $project)
                 @include('_partials.projects.thumb-link', ['project' => $project])
             @empty

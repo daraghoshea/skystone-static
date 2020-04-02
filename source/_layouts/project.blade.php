@@ -15,7 +15,8 @@ $otherProjects = $projects->reject(function($project) use ($page) {
             @include('_partials.cloudinary-image', [
                 'url' => $page->image,
                 'alt' => "{$page->title} photo",
-                'attributes' => 'class="full-screen-bg h-full" style="filter:brightness(50%); z-index:0" :style="style"'
+                'class' => 'full-screen-bg h-full',
+                'attributes' => 'style="filter:brightness(50%); z-index:0" :style="style"'
             ])
 
             <h2 class="text-3xl md:text-5xl text-center text-white shadow z-0">{{$page->title}}</h2>
