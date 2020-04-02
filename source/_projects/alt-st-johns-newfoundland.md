@@ -1,17 +1,16 @@
 ---
 title: Alt St Johns - Newfoundland
 status: Completed
-featured: false
 sector:
   - Hospitality
-rooms: '0'
-floors: 5
+rooms: '148'
+floors: 8
 order: 2017-07-24T23:17:00.000Z
 completion: '2017'
 image: >-
   https://res.cloudinary.com/skystone/image/upload/v1585095635/alt-hotel-newfoundland.jpg
 ---
-In total, there are 92 modules, 32 different module types (structural) with production currently scheduled for April to June 2016, and installation commencing in late July 2016.
+This 148-room modular hotel was designed by Lemancheau Architects for The Germain Group and
+was completed at the end of 2016 and early 2017.
 
-\
-The modules come with completed corridors, modular risers and rooftop which is a first of its kind to be installed in Canada to this scale.
+The hotel consists of 8 stories of modules and 5 basic room variances. In total, there are 92 modules and 32 different module types. The modules came with completed corridors, MEP risers, and a completed rooftop, which was the first of its kind to be installed in Canada at this scale.

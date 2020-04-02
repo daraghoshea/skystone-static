@@ -31,6 +31,8 @@
 </section>
 <footer class="bg-ssg-black pt-12 pb-6 md:py-18 px-6 text-white">
     <div class="max-w-3xl mx-auto grid gap-12 sm:grid-cols-2 md:grid-cols-3">
+
+        {{-- Navigation --}}
         <div>
             <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Menu</h3>
             <ul class="list-reset">
@@ -99,9 +101,10 @@
             </ul>
         </div>
 
-        <div class="">
-            <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Resources</h3>
-        </div>
+        {{-- RESOURCES --}}
+{{--        <div class="">--}}
+{{--            <h3 class="text-sm uppercase tracking-wide text-underline mb-4">Resources</h3>--}}
+{{--        </div>--}}
     </div>
     <p class="text-center mt-8 text-sm text-white opacity-25">
         &copy; Skystone Group LLC. All rights reserved.

@@ -115,4 +115,6 @@
         </div>
     </section>
 
+    @include('_partials.testimonials-section')
+
 @endsection

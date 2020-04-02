@@ -19,7 +19,7 @@ return [
         ['url' => '#contact-us', 'text' => 'Contact'],
         ['url' => '/projects', 'text' => 'Projects'],
         ['url' => '#', 'text' => 'Factories', 'factory' => true],
-        ['url' => '#', 'text' => 'How it Works'],
+//        ['url' => '#', 'text' => 'How it Works'],
     ],
     'services' => [
         'analytics' => 'UA-XXXXX-Y',
