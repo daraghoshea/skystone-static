@@ -1,7 +1,7 @@
 <script type='application/ld+json'>
 {
   "@context": "http://www.schema.org",
-  "@type": "Corporation",
+  "@type": "Organization",
   "name": "{{$page->data('settings','site.title')}}",
   "url": "{{$page->baseUrl}}",
   "logo": "{{$page->data('settings','site.image')}}",
